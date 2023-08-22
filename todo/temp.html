@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .h{
+            display: flex;
+
+        }
+        .eInput{
+            display: none;
+        }
+    </style>
+<body>
+
+    <div class="checked">
+        <input class="eInput" type="text">
+        <button id="e1">edit</button>
+        <button id="d1">delete</button>
+    </div>
+    <div class="checked">
+        <input class="eInput" type="text">
+        <button id="e2">edit</button>
+        <button id="d2">delete</button>
+    </div>
+    <script>
+        for(let i=1;i<3;i++){
+        let count=1;
+        document.getElementById(`e${i}`).addEventListener('click',()=>{
+            if(count==1){
+                count=0;
+                document.getElementsByClassName("eInput")[i-1].style.display = "block"
+            }
+            else{
+                count=1;
+                document.getElementsByClassName("eInput")[i-1].style.display = "none"
+            }
+           
+        })
+    }
+    for(let i=1;i<3;i++){
+        document.getElementById(`d${i}`).addEventListener('click',()=>{
+                document.getElementsByClassName('checked')[i-1].remove();
+        })
+    }
+    </script>
+</body>
+</html>
