@@ -1,51 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>To-Do</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        .h{
+        .display-li {
             display: flex;
-
-        }
-        .eInput{
-            display: none;
+            gap: 5px;
         }
     </style>
-<body>
+</head>
 
-    <div class="checked">
-        <input class="eInput" type="text">
-        <button id="e1">edit</button>
-        <button id="d1">delete</button>
+<body>
+    <div>
+        <h1> TODO LIST</h1>
     </div>
-    <div class="checked">
-        <input class="eInput" type="text">
-        <button id="e2">edit</button>
-        <button id="d2">delete</button>
-    </div>
-    <script>
-        for(let i=1;i<3;i++){
-        let count=1;
-        document.getElementById(`e${i}`).addEventListener('click',()=>{
-            if(count==1){
-                count=0;
-                document.getElementsByClassName("eInput")[i-1].style.display = "block"
-            }
-            else{
-                count=1;
-                document.getElementsByClassName("eInput")[i-1].style.display = "none"
-            }
-           
-        })
-    }
-    for(let i=1;i<3;i++){
-        document.getElementById(`d${i}`).addEventListener('click',()=>{
-                document.getElementsByClassName('checked')[i-1].remove();
-        })
-    }
-    </script>
+    <section>
+        <div class="inputField">
+            <input type="text" name="todo" id="todo">
+        </div>
+        <h3 id="hide">No data Found</h3>
+        <div id="display_main">
+        </div>
+        <footer>
+            <div class="footerContainer">
+                <button id="add">add</button>
+                <button id="search">search</button>
+            </div>
+            <div class="footerContainer">
+                <div class="select">
+                    <select onchange="select(this.value)" name="select" id="select">
+                        <option value="Action" disabled selected hidden>Action</option>
+                        <option value="select">Select All</option>
+                        <option value="unselect">Unselect All</option>
+                        <option value="delete">Delete All Selected</option>
+                    </select>
+                </div>
+                <div class="sort">
+                    <select name="sort" onchange="sort(this.value)" id="sort">
+                        <option value="Sort" disabled selected hidden>Sort</option>
+                        <option value="A-Z">A-Z</option>
+                        <option value="Z-A">Z-A</option>
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                    </select>
+                </div>
+            </div>
+            <div class="footerContainer">
+                <div>
+                    <button id="allbtn">All</button>
+                    <button id="activebtn">Active</button>
+                    <button id="completebtn">Completed</button>
+                </div>
+            </div>
+            <button id="display-array">display array</button>
+        </footer>
+    </section>
+
+    <script src="temp.js"></script>
+
 </body>
 </html>

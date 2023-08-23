@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .search {
+        display: flex;
+        justify-content: center;
+    }
+
+    .search input {
+        width: 50%;
+    }
+
+    .search img {
+        width: 3.5vh;
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+
+    }
+    .display-main-2 img {
+        width: 2vh;
+    }
+
+    .todo {
+        width: 70%;
+        margin: 100px;
+        margin-left: 300px;
+        background-color: rgb(197, 194, 194);
+        border-radius: 10px;
+        border: 1px solid black;
+    }
+    .footer{
+        display: flex;
+        justify-content: center;
+    }
+    .footerContainer{
+        display: flex;
+    }
+    span{
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <div>
+        <div class="todo">
+            <h1>My-Todos</h1>
+            <div class="search">
+                <input type="text" placeholder="Add new....">
+                <img class="seach" src="icons8-plus.svg" alt="">
+                <img class="seach" src="icons8-search.svg" alt="">
+            </div>
+            <br>
+            <div class="display-main">
+                <div class="main">
+                    <div class="display-main-1">
+                        <input type="checkbox">
+                        <span>a</span>
+                    </div>
+                    <div class="display-main-2">
+                        <input type="text" placeholder="edit-text">
+                        <img src="icons8-edit.svg" alt="">
+                        <img src="icons8-delete.svg" alt="">
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="display-main-1">
+                        <input type="checkbox">
+                        <span>a</span>
+                    </div>
+                    <div class="display-main-2">
+                        <input type="text" placeholder="edit-text">
+                        <img src="icons8-edit.svg" alt="">
+                        <img src="icons8-delete.svg" alt="">
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="display-main-1">
+                        <input type="checkbox">
+                        <span>a</span>
+                    </div>
+                    <div class="display-main-2">
+                        <input type="text" placeholder="edit-text">
+                        <img src="icons8-edit.svg" alt="">
+                        <img src="icons8-delete.svg" alt="">
+                    </div>
+                </div>
+                  <div class="main">
+                    <div class="display-main-1">
+                        <input type="checkbox">
+                        <span>a</span>
+                    </div>
+                    <div class="display-main-2">
+                        <input type="text" placeholder="edit-text">
+                        <img src="icons8-edit.svg" alt="">
+                        <img src="icons8-delete.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="footer">
+                <div class="footerContainer">
+                    <div class="select">
+                        <select onchange="select(this.value)" name="select" id="select">
+                            <option value="Action" disabled selected hidden>Action</option>
+                            <option value="select">Select All</option>
+                            <option value="unselect">Unselect All</option>
+                            <option value="delete">Delete All Selected</option>
+                        </select>
+                    </div>
+                    <div class="sort">
+                        <select name="sort" onchange="sort(this.value)" id="sort">
+                            <option value="Sort" disabled selected hidden>Sort</option>
+                            <option value="A-Z">A-Z</option>
+                            <option value="Z-A">Z-A</option>
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="footerContainer">
+                    <div>
+                        <button id="allbtn">All</button>
+                        <button id="activebtn">Active</button>
+                        <button id="completebtn">Completed</button>
+                    </div>
+                </div>
+                </div>
+            </footer>
+        </div>
+    <div>
+</body>
+
+</html>
