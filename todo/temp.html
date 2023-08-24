@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +10,17 @@
             display: flex;
             gap: 5px;
         }
+        body {
+            background-color: rgb(23, 22, 42);
+        }
+        section {
+            width: 60%;
+            border-radius: 10px;
+            background-color: white;
+        }
+        #search {
+            width: 2vh;
+        }
     </style>
 </head>
 
@@ -19,18 +29,21 @@
         <h1> TODO LIST</h1>
     </div>
     <section>
-        <div class="inputField">
-            <input type="text" name="todo" id="todo">
+        <div class="input-bar">
+            <div class="inputField">
+                <input class="todo" type="text" name="todo" id="todo" placeholder="Add new....">
+            </div>
+            <div class="footerContainer">
+                <img id="add" src="icons8-plus.svg" alt="">
+                <img id="search" src="icons8-search.svg" alt="">
+            </div>
         </div>
-        <h3 id="hide">No data Found</h3>
+        <span id="hide">No data Found</span>
         <div id="display_main">
         </div>
         <footer>
-            <div class="footerContainer">
-                <button id="add">add</button>
-                <button id="search">search</button>
-            </div>
-            <div class="footerContainer">
+
+            <div class="footerContainer2">
                 <div class="select">
                     <select onchange="select(this.value)" name="select" id="select">
                         <option value="Action" disabled selected hidden>Action</option>
@@ -49,18 +62,17 @@
                     </select>
                 </div>
             </div>
-            <div class="footerContainer">
+            <div class="footerContainer3">
                 <div>
-                    <button id="allbtn">All</button>
-                    <button id="activebtn">Active</button>
-                    <button id="completebtn">Completed</button>
+                    <button class="button-81" id="allbtn">All</button>
+                    <button class="button-81" id="activebtn">Active</button>
+                    <button class="button-81" id="completebtn">Completed</button>
                 </div>
             </div>
-            <button id="display-array">display array</button>
         </footer>
     </section>
 
     <script src="temp.js"></script>
-
 </body>
+
 </html>

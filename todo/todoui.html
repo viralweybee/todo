@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -143,4 +143,102 @@
     <div>
 </body>
 
+</html> -->
+
+<!-- HTML !-->
+<!-- <button class="button-81" role="button">Button 81</button>
+
+/* CSS */
+.button-81 {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-81:hover {
+  background-color: #1e293b;
+  color: #fff;
+} -->
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .checked{
+            display: flex;
+            justify-content: space-between;
+        }
+        .edit{
+            width: 20px;
+        }
+        .delete{
+            width: 20px;
+        }
+        #text{
+            border: 1px;
+        }
+    </style>
+</head>
+<body>
+    <input id="todo" type="text">
+    <div class="display-main">
+        <div class="checked">
+            <div class="checked1">
+            <input id="check${count}" class="check" type="checkbox">
+           <input id="text" type="text">
+        </div>
+        <div class="checked2">
+            <img class="edit" id="e${count}" src="icons8-edit.svg" alt="">
+            <img class="delete" id="d${count}" src="icons8-delete.svg" alt="">
+        </div>
+        </div>
+    </div>
+    <button id="add">add</button>
+    <script>
+        let count=0;
+        document.getElementById('e${count}').addEventListener('click',()=>{
+            document.getElementById('text').focus();
+        })
+        document.getElementById('add').addEventListener('click',()=>{
+            count++;
+            let text=document.getElementById('todo').value;
+        //     let html=`<div class="checked">
+        //     <div class="checked1">
+        //     <input id="check${count}" class="check" type="checkbox">
+        //    <input id="text" type="text">
+        // </div>
+        // <div class="checked2">
+        //     <img class="edit" id="e${count}" src="icons8-edit.svg" alt="">
+        //     <img class="delete" id="d${count}" src="icons8-delete.svg" alt="">
+        // </div>
+        // </div>`
+        document.getElementById('text').value=text;
+        })
+    </script>
+</body>
 </html>
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
