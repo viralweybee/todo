@@ -19,7 +19,8 @@ function add() {
     todo.value = "";
     updateUI(arr);
 }
-document.addEventListener("keydown", function (e) {
+
+todo.addEventListener("keydown", function (e) {
     let key = e.key;
     if (key === "Enter") {
         add();
@@ -34,7 +35,7 @@ function updateUI(arr) {
         <div class="checked1">
    <input id="check${i + 1}"class="check" type="checkbox">
    <span id="text${i + 1}" class="text">${arr[i]}</span>
-   <input hidden id="text1${i+1}" class="text1">
+   <input hidden id="textinput${i + 1}" class="text1">
    </div>
    <div class="checked2">
    <img class="edit" id="e${i + 1}" src="icons8-edit.svg" alt="">
@@ -46,17 +47,26 @@ function updateUI(arr) {
     edit();
     deleteval();
 }
+
 //------------------------------------------------------------------------------------editdeletefunctionality--------------------------------------
 function edit() {
     for (let i = 0; i < arr.length; i++) {
         if (document.getElementById(`e${i + 1}`)) {
             document.getElementById(`e${i + 1}`).addEventListener('click', () => {
-                if (todo.value != "") {
-                    document.getElementById(`text${i + 1}`).innerHTML = todo.value;
-                    arr[i] = todo.value;
-                    todo.value = "";
-                    i = -1;
-                }
+                // if (todo.value != "") {
+                //     document.getElementById(`text${i + 1}`).innerHTML = todo.value;
+                //     arr[i] = todo.value;
+                //     todo.value = "";
+                //     i = -1;
+                // }
+                document.getElementById(`textinput${i+1}`).hidden=false;
+               document.getElementById(`textinput${i+1}`).addEventListener('keydown',function(e){
+                    if(e.key==='Enter'){
+                        arr[i]=document.getElementById(`textinput${i+1}`).value;
+                        document.getElementById(`textinput${i+1}`).hidden=true;
+                        updateUI(arr)
+                    }
+               })
             })
         }
     }
@@ -72,7 +82,7 @@ function deleteval() {
                         console.log(arr);
                         document.getElementById(`div${i + 1}`).remove();
                         i = -1;
-                    }  
+                    }
                 }
             })
         }
